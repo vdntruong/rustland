@@ -133,9 +133,11 @@ pub fn my_another_function() {
 
 File `src/content/mod.rs`
 ```rust
-mod content;
-mod catalog;
+pub mod content;
+pub mod catalog;
 ```
+
+`mod.rs` is a special file that can be used to group multiple modules in a single file.
 
 File `src/main.rs`
 ```rust
