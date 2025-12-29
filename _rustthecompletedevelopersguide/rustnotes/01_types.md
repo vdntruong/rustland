@@ -51,3 +51,68 @@ let suits = vec!["Hearts", "Diamonds", "Clubs", "Spades"];
 let values = vec!["2", "3", "4", "5"];
 ```
 
+## Enum
+
+Enum in Rust is a little bit different from other languages. It is a type that can be used to represent a value that can be one of a set of possible values. It is a way to define a type that can be one of a set of possible values.
+
+Does each thing you're modeling have the same methods? If so, you should use enums.
+Does each thing have some same, but also some different methods? If so, you should use structs.
+
+```rust
+// Enum without data
+enum Suit {
+    Hearts,
+    Diamonds,
+    Clubs,
+    Spades,
+}
+
+// Enum with data
+enum Media {
+    Book { title: String, author: String },
+    Movie { title: String, director: String },
+    AudioBook { title: String },
+}
+```
+
+## Option
+
+In Rust, we don't have null, or nil, or undefined. We have Option.
+
+Option is a type that can be used to represent a value that can be one of two possible values: Some or None.
+
+```rust
+enum Option<T> {
+    Some(T),
+    None,
+}
+```
+
+Option has two variants: Some and None.
+
+### Unwrap
+
+Unwrap is a method that returns the value inside the Option.
+
+```rust
+let item = catalog.items.get(1);
+println!("{:#?}", item.unwrap());
+```
+
+### Expect
+
+Expect is a method that returns the value inside the Option, or panics if the Option is None.
+
+```rust
+let item = catalog.items.get(1);
+println!("{:#?}", item.expect("No media found"));
+```
+
+### UnwrapOr
+
+UnwrapOr is a method that returns the value inside the Option, or a default value if the Option is None.
+
+```rust
+let item = catalog.items.get(1);
+println!("{:#?}", item.unwrap_or(&Media::Placeholder));
+```

@@ -74,3 +74,80 @@ fn main() {
     my_function();
 }
 ```
+
+## Three ways to create modules
+
+1. Inline modules - Create a mod in an existing file
+2. File-based modules - Create a module in a new single file in the same folder
+3. Folder-based modules - Create a module in a new folder
+
+### Inline modules
+
+```rust
+mod catalog {
+    pub fn my_function() {
+        println!("Hello, world!");
+    }
+}
+
+fn main() {
+    let catalog = catalog::my_function();
+}
+```
+
+### File-based modules
+
+File `src/content.rs`
+```rust
+pub fn my_function() {
+    println!("Hello, world!");
+}
+```
+
+File `src/main.rs`
+```rust
+// mod content;
+
+use crate::content::my_function;
+
+fn main() {
+    my_function();
+}
+```
+
+### Folder-based modules
+
+File `src/content/content.rs`
+```rust
+pub fn my_function() {
+    println!("Hello, world!");
+}
+```
+
+File `src/content/catalog.rs`
+```rust
+pub fn my_another_function() {
+    println!("Hello, world from here!");
+}
+```
+
+File `src/content/mod.rs`
+```rust
+mod content;
+mod catalog;
+```
+
+File `src/main.rs`
+```rust
+mod content;
+
+fn main() {
+    content::catalog::my_another_function();
+}
+```
+
+## Rules
+
+- Every file and folder makes its own separate module
+- You can't do deeply nested imports
+- You have to chain imports
