@@ -1,3 +1,5 @@
+use std::fmt::format;
+
 #[derive(Debug)]
 struct Account {
     id: u32,
@@ -14,11 +16,30 @@ impl Account {
             balance: 0,
         }
     }
+
+    fn deposit(&mut self, amount: i32) -> i32 {
+        self.balance += amount;
+        self.balance
+    }
+
+    fn withdraw(&mut self, amount: i32) -> i32 {
+        self.balance -= amount;
+        self.balance
+    }
+
+    fn summary(&self) -> String {
+        // format macro is a macro, not a function, and we used ! to call it
+        format!("{} has a balance {}", self.holder, self.balance)
+    }
 }
 
 #[derive(Debug)]
 struct Bank {
     accounts: Vec<Account>,
+}
+
+fn add_account(bank: &mut Bank, account: Account) {
+    bank.accounts.push(account);
 }
 
 // print_account take ownership of an account
@@ -50,8 +71,27 @@ impl Bank {
         }
     }
 
+    // Instance method
+    fn add_account(&mut self, account: Account) {
+        self.accounts.push(account);
+    }
+
+    // Instance method
     fn print_num_account(&self) {
         println!("Number of accounts: {}", self.accounts.len());
+    }
+
+    fn total_balance(&self) -> i32 {
+        // iter is a method that returns an iterator of the vector
+        // map is a method like lambda function in C#
+        self.accounts.iter().map(|account| account.balance).sum()
+    }
+
+    fn summary(&self) -> Vec<String> {
+        self.accounts
+            .iter()
+            .map(|account| account.summary())
+            .collect::<Vec<String>>()
     }
 }
 
@@ -73,9 +113,21 @@ fn main() {
     println!("{:#?}", account);
 
     let mut bank = Bank::new();
-    let account1 = Account::new(1, String::from("Pete"));
+    let mut account1 = Account::new(1, String::from("Pete"));
+    account1.deposit(100);
+    account1.withdraw(50);
+    // println is a macro as well
+    println!("{}", account1.summary());
+
     let account2 = Account::new(2, String::from("David"));
-    bank.accounts.push(account1);
-    bank.accounts.push(account2);
+    bank.add_account(account1);
+    bank.add_account(account2);
+
+    println!("{:#?}", bank.summary());
+    println!("{}", bank.total_balance());
+    // println!("{:#?}", bank);
+
+    // bank.accounts.push(account1);
+    // bank.accounts.push(account2);
     bank.print_num_account();
 }
