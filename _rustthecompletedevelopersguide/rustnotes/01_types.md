@@ -116,3 +116,75 @@ UnwrapOr is a method that returns the value inside the Option, or a default valu
 let item = catalog.items.get(1);
 println!("{:#?}", item.unwrap_or(&Media::Placeholder));
 ```
+
+## Result
+
+Result is a type that can be used to represent a value that can be one of two possible values: Ok or Err.
+
+```rust
+enum Result<T, E> {
+    Ok(T),
+    Err(E),
+}
+```
+
+This is the main way in Rust to handle errors.
+
+## String in Reust
+
+### String
+
+```rust
+let s = String::from("hello");
+```
+
+String is a growable, heap-allocated string type.
+
+This way allocation is done on the heap. With a metadata (length and capacity) stored on the stack.
+
+Use cases:
+- When you need to own the string
+- When you need to modify the string (grow or shrink)
+- When you need to transfer ownership of the string to another variable
+
+### &String
+
+```rust
+let s = &String::from("hello");
+```
+
+String reference is a reference to a string. 
+
+This way allocation is done on the stack. With a metadata (length and capacity) stored on the stack.
+
+Use cases (rarely used!): Rust will automatically turn &String to &str for you.
+
+String references and string slices are immutable. Both provide a read-only view into a string.
+
+### &str (String slice)
+
+String slice is a reference to a string. 
+This way allocation is done on the data segment.
+
+```rust
+let s = "hello";
+```
+
+String slice allow you refer to text in the data segment without a heap allocation.
+
+```rust
+let color = "green";
+```
+
+String slice allow you 'slice' (take a portion) of text that is already on the heap.
+
+```rust
+let color = String::from("green");
+let green = &color[0..5];
+```
+
+Use cases:
+- Anytime you don't want to take ownership of the string
+- Anytime you want to refer to a portion of a string owned by something else
+
+String references and string slices are immutable. Both provide a read-only view into a string.

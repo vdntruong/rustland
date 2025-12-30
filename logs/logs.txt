@@ -1,0 +1,5 @@
+INFOR - lorem 1
+ERROR - lorem 2
+INFOR - lorem 3
+DEBUG - lorem 4
+ERROR - lorem 5
