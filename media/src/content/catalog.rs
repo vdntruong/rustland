@@ -9,7 +9,7 @@ pub enum MightHaveAValue<'a> {
 
 #[derive(Debug)]
 pub struct Catalog {
-    items: Vec<Media>,
+    pub items: Vec<Media>,
 }
 
 impl Catalog {

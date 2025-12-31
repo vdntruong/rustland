@@ -1,9 +1,12 @@
 mod content;
 
 //  module : file : public object
-use content::catalog::Catalog;
+use content::catalog::{Catalog, MightHaveAValue};
 use content::media::Media;
-use content::media::MightHaveAValue;
+
+fn print_media(audiobook: &Media) {
+    println!("{:#?}", audiobook);
+}
 
 fn main() {
     let audiobook = Media::AudioBook {
