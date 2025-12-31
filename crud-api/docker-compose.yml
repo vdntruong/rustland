@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  db:
+    container_name: db
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypass
+      POSTGRES_DB: users-db
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    container_name: crud-api
+    image: crud-api:1.0.0
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://myuser:mypass@db:5432/users-db
+      - HTTP_PORT=8080
+
+volumes:
+  pgdata: {}
+  
+    

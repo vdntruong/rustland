@@ -1,0 +1,27 @@
+meta {
+  name: Create user
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://127.0.0.1:8080/users
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "pete2",
+    "email": "pete2@gmail.com"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
