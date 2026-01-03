@@ -148,6 +148,44 @@ fn main() {
 }
 ```
 
+## Submodules
+
+Submodules are modules that are nested inside another module.
+
+`catalog.rs` file:
+```rust
+pub mod cataloghelper {
+    pub fn my_function() {
+        println!("Hello, world!");
+    }
+}
+
+pub mod catalogutils {
+    pub fn my_another_function() {
+        println!("Hello, world from here!");
+    }
+}
+
+mod catalogprivate {
+    pub fn my_private_function() {
+        println!("Hello, world from private!");
+    }
+}
+```
+
+Then we have catalog module and 2 submodules: cataloghelper and catalogutils.
+
+From `main.rs`, we can access the public items in the submodules:
+
+```rust
+mod catalog;
+
+fn main() {
+    catalog::cataloghelper::my_function();
+    catalog::catalogutils::my_another_function();
+}
+```
+
 ## Rules
 
 - Every file and folder makes its own separate module

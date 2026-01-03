@@ -24,6 +24,12 @@ Methods are functions that are associated with a type, like methods in Go.
 
 Closures are functions that are defined inline, like lambda functions in Go.
 
+```rust
+let add :fn(i32, i32) -> i32 = |x: i32, y: i32| -> i32 { x + y };
+
+let pri :fn() = || println!("Hello, world!");
+```
+
 ## Generics
 
 Generics are templates for types, like generics in Go.
