@@ -8,6 +8,8 @@ pub mod hashset;
 pub mod timetest;
 pub mod thread;
 pub mod threadscoped;
+pub mod mutex;
+pub mod mpsc;
 
 fn main() {
     // closures::test_closures();
@@ -21,5 +23,9 @@ fn main() {
     // timetest::test();
     // timetest::test_chrono()
     // thread::spawn_thread();
-    threadscoped::test();
+    // threadscoped::test();
+    // mutex::test();
+    // mutex::test_async();
+    // mpsc::test();
+    mpsc::test_loop();
 }
