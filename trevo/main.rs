@@ -10,6 +10,7 @@ pub mod thread;
 pub mod threadscoped;
 pub mod mutex;
 pub mod mpsc;
+pub mod fs;
 
 fn main() {
     // closures::test_closures();
@@ -27,5 +28,8 @@ fn main() {
     // mutex::test();
     // mutex::test_async();
     // mpsc::test();
-    mpsc::test_loop();
+    // mpsc::test_loop();
+    fs::test_dirs();
+    fs::test_create_delete_file();
+    fs::test_read_file();
 }
