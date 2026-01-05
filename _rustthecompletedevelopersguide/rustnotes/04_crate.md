@@ -10,10 +10,22 @@ External crates listing at https://crates.io/, and docs at https://docs.rs/
 
 ## Types of Crates
 
-### Binary Crate
+Use a binary (application) template
+```bash
+cargo init --bin ...
+```
 
-A binary crate is a crate that is compiled into an executable file.
+Use a library template
+```bash
+cargo init --lib ...
+```
+
+### Binary Crate / Application Crate
+
+A binary crate is a crate that can be compiled into an executable file.
+
+With a `main.rs` file, and `fn main() {}` function, it is a binary crate.
 
 ### Library Crate
 
-A library crate is a crate that is compiled into a shared library file.
+A library crate is a crate that can be compiled into a shared library file.
