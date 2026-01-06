@@ -1,0 +1,17 @@
+[package]
+name = "trevoclap"
+version = "0.1.0"
+edition = "2024"
+description = """
+
+💁  👌  🎍  😍
+Ohwow, so far so good!
+💁  👌  🎍  😍
+"""
+
+[dependencies]
+clap = { version = "4.5.54", features = ["cargo"] }
+
+[[bin]]
+name = "trevoclap"
+path = "main.rs"
