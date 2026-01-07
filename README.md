@@ -2,6 +2,10 @@
 
 Learning Rust fundamentals through hands-on examples and exercises.
 
+## Call out!
+
+- Turbofish syntax (`::<>`)
+
 ## 📚 About
 
 This repository contains practical Rust projects and notes as I learn the language. Each project focuses on specific Rust concepts like ownership, borrowing, structs, traits, and the module system.

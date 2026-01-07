@@ -12,6 +12,7 @@ pub mod mutex;
 pub mod mpsc;
 pub mod fs;
 pub mod serde;
+mod default;
 
 fn main() {
     // closures::test_closures();
@@ -35,5 +36,6 @@ fn main() {
     // fs::test_create_delete_file();
     // fs::test_read_file();
 
-    serde::test();
+    // serde::test();
+    default::test();
 }
