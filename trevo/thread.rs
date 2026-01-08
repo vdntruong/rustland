@@ -4,6 +4,7 @@ The main function is executed on the main thread.
 
 https://doc.rust-lang.org/std/thread/
 https://doc.rust-lang.org/std/thread/#spawning-a-thread
+https://doc.rust-lang.org/book/ch16-00-concurrency.html
  */
 
 use std::thread::{spawn, JoinHandle};

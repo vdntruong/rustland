@@ -13,6 +13,7 @@ pub mod mpsc;
 pub mod fs;
 pub mod serde;
 mod default;
+mod asynctest;
 
 fn main() {
     // closures::test_closures();
@@ -37,5 +38,6 @@ fn main() {
     // fs::test_read_file();
 
     // serde::test();
-    default::test();
+    // default::test();
+    asynctest::test();
 }
