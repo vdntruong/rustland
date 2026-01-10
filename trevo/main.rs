@@ -14,6 +14,7 @@ pub mod fs;
 pub mod serde;
 mod default;
 mod asynctest;
+mod asynctokio;
 
 fn main() {
     // closures::test_closures();
@@ -39,5 +40,6 @@ fn main() {
 
     // serde::test();
     // default::test();
-    asynctest::test();
+    // asynctest::test();
+    asynctokio::test();
 }
