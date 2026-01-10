@@ -5,6 +5,14 @@ Learning Rust fundamentals through hands-on examples and exercises.
 ## Call out!
 
 - Turbofish syntax (`::<>`)
+- The `?` operator at the end of a function call returns the error if it occurs.
+
+```rust
+fn my_fun(x: i32) -> Result<(), Error> {
+    x?;
+    Ok(())
+}
+```
 
 ## 📚 About
 

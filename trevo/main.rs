@@ -16,6 +16,7 @@ mod default;
 mod asynctest;
 mod asynctokio;
 mod process;
+mod csv;
 
 fn main() {
     // closures::test_closures();
@@ -43,5 +44,6 @@ fn main() {
     // default::test();
     // asynctest::test();
     // asynctokio::test();
-    process::test();
+    // process::test();
+    csv::test();
 }
