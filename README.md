@@ -4,6 +4,7 @@ Learning Rust fundamentals through hands-on examples and exercises.
 
 ## Call out!
 
+- In Rust, crate can only define 1 library (`lib.rs`), but can define multiple binaries
 - Turbofish syntax (`::<>`)
 - The `?` operator at the end of a function call returns the error if it occurs.
 
