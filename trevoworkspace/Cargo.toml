@@ -1,0 +1,13 @@
+[workspace]
+resolver = "3"
+
+members = [
+    "myapp01",
+    "mylib01",
+]
+
+default-members = [] # to specify default members to build/test
+exclude = [] # to exclude some members
+
+[workspace.package]
+homepage = "https://rustup.dev"

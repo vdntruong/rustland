@@ -1,0 +1,8 @@
+[package]
+name = "myapp01"
+version = "0.1.0"
+edition = "2024"
+homepage.workspace = true
+
+[dependencies]
+mylib01 = { version = "0.1.0", path = "../mylib01" }

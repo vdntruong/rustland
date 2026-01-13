@@ -1,0 +1,1 @@
+/Users/vdntruong/Projects/pet-projects/rustland/trevoworkspace/target/debug/myapp01: /Users/vdntruong/Projects/pet-projects/rustland/trevoworkspace/myapp01/src/main.rs /Users/vdntruong/Projects/pet-projects/rustland/trevoworkspace/mylib01/src/lib.rs
